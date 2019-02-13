@@ -1,0 +1,19 @@
+<div class="container">
+    <p-toast position="top-left"></p-toast>
+    <button class="btn btn-primary" (click)="goBack()">Go back</button>
+    <ul class="list-group mt-5">
+    </ul>
+    <form (ngSubmit)="editSubmit()" #editForm="ngForm">
+        <div class="form-group">
+            <label for="editUserName">User name</label>
+            <input type="text" class="form-control" id="editUserName" value="{{ user?.name }}">
+        </div>
+        <div class="form-group">
+            <label for="editUserEmail">Email address</label>
+            <input type="email" class="form-control" id="editUserEmail" value="{{ user?.email }}">
+        </div>
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-info">Edit</button>
+        </div>
+    </form>
+</div>

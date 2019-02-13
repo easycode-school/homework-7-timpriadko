@@ -1,3 +1,19 @@
-<p>
-  login works!
-</p>
+<form (ngSubmit)="loginSubmit()" #loginForm="ngForm" class="d-flex justify-content-end mb-5">
+    <div class="form-row">
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Login" name="login" required [(ngModel)]="user.login" #login="ngModel">
+            <div *ngIf="login.touched && login.invalid">
+                Login is required
+            </div>
+        </div>
+        <div class="col">
+            <input type="password" class="form-control" placeholder="Password" name="password" required minlength="4" [(ngModel)]="user.password" #password="ngModel">
+            <div *ngIf="loginForm.touched && loginForm.invalid">
+                <div *ngIf="password?.errors.minlength">
+                    Name must be at least 4 characters long.
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary mx-3" [disabled]="loginForm.invalid" style="height: 38px">Log in</button>
+</form>

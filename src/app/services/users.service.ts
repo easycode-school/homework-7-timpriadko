@@ -13,11 +13,11 @@ export class UsersService {
     private http: HttpClient
   ) { }
 
-  getUsers(): Observable<Array<Object>> {
-    return this.http.get<Array<Object>>(`${this.apiUrl}/users`);
+  getUsers(): Observable<Array<object>> {
+    return this.http.get<Array<object>>(`${this.apiUrl}/users`);
   }
 
-  getUser(id: string): Observable<Object> {
-    return this.http.get<Object>(`${this.apiUrl}/users/${id}`);
+  getUser(id: string): Observable<object> {
+    return this.http.get<object>(`${this.apiUrl}/users/${id}`);
   }
 }

@@ -7,7 +7,8 @@ export class AuthService {
 
   constructor() { }
 
+  // Check if login & password are in the localstorage
   isAuth() {
-    return localStorage.getItem('token') ? true : false;
+    return localStorage.getItem('login') ? true : false;
   }
 }

@@ -10,6 +10,11 @@ import { AboutComponent } from './components/about/about.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -19,14 +24,19 @@ import { LoginComponent } from './components/login/login.component';
     AboutComponent,
     PageNotFoundComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    UserEditComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    ToastModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
